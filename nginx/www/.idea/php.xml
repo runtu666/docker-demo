@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <PhpCSConfiguration standards="MySource;PEAR;PSR1;PSR12;PSR2;Squiz;Zend" tool_path="$USER_HOME$/.composer/vendor/bin/phpcs" />
+    </phpcs_settings>
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/qianheyi/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/clagiordano/weblibs-configmanager" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/alibabacloud/client" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/pingplusplus/pingpp-php" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/danielstjules/stringy" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/composer" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/adbario/php-dot-notation" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/aliyuncs/oss-sdk-php" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/qianheyi/vendor/topthink/think-installer" />
+    </include_path>
+  </component>
+</project>

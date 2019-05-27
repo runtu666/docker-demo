@@ -1,0 +1,72 @@
+version: '3'
+services:
+  nginx:
+    image: yangtao8614/nginx:201905171339
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /Users/yangtao/php-program:/usr/share/nginx/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/cert:/etc/nginx/cert
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/log/error.log:/var/log/nginx/error.log
+    networks:
+      - frontend
+    extra_hosts:
+      - "qianheyi.com:192.168.31.103"
+    restart: always
+    container_name: nginx
+
+  php:
+    ports:
+      - "9500:9500"
+      - "9501:9501"
+      - "9502:9502"
+      - "9503:9503"
+      - "9504:9504"
+      - "9505:9505"
+    image: yangtao8614/php-fpm:201905171049
+    volumes:
+      - /Users/yangtao/php-program:/var/www/html
+      - ./php/config/php.ini:/usr/local/etc/php/php.ini
+      - ./php/config/php-fpm.conf:/usr/local/etc/php-fpm.conf
+      - ./php/config/php-fpm.d:/usr/local/etc/php-fpm.d
+    networks:
+      - frontend
+      - backend
+    restart: always
+    container_name: php
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    networks:
+      - backend
+    restart: always
+    container_name: mysql
+
+  redis:
+    image: yangtao8614/redis:201905171339
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis/redis.conf/:/usr/local/etc/redis.conf
+      - ./redis/data:/usr/local/redis/data
+      - ./redis/redis.log:/usr/local/redis/redis.log
+    networks:
+      - backend
+    restart: always
+    container_name: redis
+
+networks:
+  frontend:
+  backend:
+    
