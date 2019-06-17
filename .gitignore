@@ -2,5 +2,5 @@
 
 ./redis/redis.log
 ./nginx/log/error.log
-.idea/workspace.xml
+.idea
  mysql/data/
