@@ -12,7 +12,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/cert:/etc/nginx/cert
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/log/error.log:/var/log/nginx/error.log
+      - /tmp/docker/nginx/log/error.log:/var/log/nginx/error.log
     networks:
       - frontend
     extra_hosts:
@@ -59,8 +59,8 @@ services:
       - "6379:6379"
     volumes:
       - ./redis/redis.conf/:/usr/local/etc/redis.conf
-      - ./redis/data:/usr/local/redis/data
-      - ./redis/redis.log:/usr/local/redis/redis.log
+      - /tmp/docker/redis/data:/usr/local/redis/data
+      - /tmp/docker/redis/redis.log:/usr/local/redis/redis.log
     networks:
       - backend
     restart: always
