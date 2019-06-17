@@ -8,7 +8,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/www:/usr/share/nginx/html
+      - /Users/yangtao/www:/usr/share/nginx/html
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/cert:/etc/nginx/cert
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
@@ -30,7 +30,7 @@ services:
       - "9505:9505"
     image: yangtao8614/php-fpm:201905171049
     volumes:
-      - ./nginx/www:/var/www/html
+      - /Users/yangtao/www:/var/www/html
       - ./php/config/php.ini:/usr/local/etc/php/php.ini
       - ./php/config/php-fpm.conf:/usr/local/etc/php-fpm.conf
       - ./php/config/php-fpm.d:/usr/local/etc/php-fpm.d
@@ -45,7 +45,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./mysql/data:/var/lib/mysql
+      - /tmp/docker/mysql/data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 123456
     networks:
